@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Mobile from './pages/MobilePage';
+import Login from './pages/LoginPage';
+import Mentor from './pages/MentorPage';
+import MentorProfile from './pages/MentorProfilePage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  render() {
+    return(
+      <>
+        <Switch>
+          <Route exact path="/" component={Mobile} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/mentor" component={Mentor} />
+          <Route exact path="/mentor_profile" component={MentorProfile} />
+        </Switch>
+      </>
+    );
+  }
 }
 
 export default App;
+
